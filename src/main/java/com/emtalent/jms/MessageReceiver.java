@@ -1,4 +1,4 @@
-package com.emtalent.samples.jms;
+package com.emtalent.jms;
 
 import javax.jms.Connection;
 //import javax.jms.DeliveryMode;
@@ -29,7 +29,7 @@ public class MessageReceiver {
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
             // Create the destination (Topic or Queue)
-            Destination destination = session.createQueue("TEST.FOO");
+            Destination destination = session.createQueue("QUEUE1");
 
             // Create a MessageConsumer from the Session to the Topic or Queue
             MessageConsumer consumer = session.createConsumer(destination);

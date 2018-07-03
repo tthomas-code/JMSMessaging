@@ -1,4 +1,4 @@
-package com.emtalent.samples.jms;
+package com.emtalent.jms;
 
 import javax.jms.Connection;
 import javax.jms.DeliveryMode;
@@ -28,14 +28,14 @@ public class MessageSender {
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
             // Create the destination (Topic or Queue)
-            Destination destination = session.createQueue("TEST.FOO");
+            Destination destination = session.createQueue("QUEUE1");
 
             // Create a MessageProducer from the Session to the Topic or Queue
             MessageProducer producer = session.createProducer(destination);
             producer.setDeliveryMode(DeliveryMode.PERSISTENT);
 
             // Create a messages
-            String text = "Message from Marketplace sender";
+            String text = args[0];
             TextMessage message = session.createTextMessage(text);
 
             // Tell the producer to send the message
