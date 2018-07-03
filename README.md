@@ -4,7 +4,7 @@ Code to send and receive messages to and from an Apache Active MQ message broker
 
 System Requirements
 ===================
-JDK 1.8
+JDK 1.8 or above
 Maven
 Apache Active MQ
 Eclipse IDE
